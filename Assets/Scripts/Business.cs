@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,7 +37,6 @@ public class Business : MonoBehaviour
     {
         AddProfit();
     }
-
     private void AddProfit()
     {
         if (ManageData.Data()._dataBusinesses[Id].Level == 0) return;
@@ -50,6 +48,10 @@ public class Business : MonoBehaviour
             Balance.instanse.UpdateBalance(Profit());
         }
     }
+
+
+
+
 
     private void AddBusiness(int id)
     {
@@ -72,7 +74,6 @@ public class Business : MonoBehaviour
         profit = lvl * baseProfit * UpgradeBonus();
         return (int)profit;
     }
-    
     private float UpgradeBonus()
     {
         float bonus = 0;
@@ -86,8 +87,6 @@ public class Business : MonoBehaviour
         }
         return bonus+1;
     }
-
-
     private int LevelPrice()
     {
         int lvl = ManageData.Data()._dataBusinesses[Id].Level;
@@ -109,11 +108,12 @@ public class Business : MonoBehaviour
         UpdateText();
     }
 
+
+
     public void UpdateText()
     {
         _levelText.text = $"LVL \n {ManageData.Data()._dataBusinesses[Id].Level}";
         _priceText.text = $"Цена: {LevelPrice()}$";
         _profitText.text = $"Доход \n {Profit()}$";
     }
-
 }

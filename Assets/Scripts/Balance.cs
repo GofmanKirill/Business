@@ -18,11 +18,13 @@ public class Balance : MonoBehaviour
         UpdateBalance(0);
     }
 
+
     public static bool CheckBalance(int price)
     {
         if (price <= ManageData.Data().CurrentBalance) return false;
         else return true;
     }
+
 
     public void UpdateBalance(int value)
     {

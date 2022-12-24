@@ -24,6 +24,7 @@ public class Data
     }
 
 
+
     public void PurchaseUpgrade(int idBusiness,int idUpgrade)
     {
         _dataBusinesses[idBusiness]._dataUpgrades[idUpgrade].Purchased = true;
@@ -34,13 +35,16 @@ public class Data
     }
 
 
+
     public void UpdateBalance(int value)
     {
         _balance += value;
     }
-
-
 }
+
+
+
+
 
 [System.Serializable]
 public class DataBusiness
@@ -49,9 +53,11 @@ public class DataBusiness
     public int Level { get { return _lvl; } set { _lvl = value; } }
 
 
-
     public List<DataUpgrade> _dataUpgrades = new List<DataUpgrade>(); 
 }
+
+
+
 
 
 [System.Serializable]

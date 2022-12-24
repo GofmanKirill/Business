@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class ManageData: MonoBehaviour
@@ -12,10 +11,12 @@ public class ManageData: MonoBehaviour
         LoadData();
     }
 
-    private void OnApplicationQuit()
+
+    private void OnApplicationPause(bool pause)
     {
         SaveData();
     }
+
 
     public static void SaveData()
     {
